@@ -1,0 +1,28 @@
+name: Auto-merge pr-sync branches into main
+
+on:
+  create:
+    branches:
+      - pr-sync-*
+
+jobs:
+  auto_merge_learnspace:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "sora7672"
+          git config user.email "s0ra.bloodydiary@googlemail.com"
+
+      - name: Merge pr-sync into main
+        run: |
+          git fetch origin main
+          git checkout main
+          git merge --no-edit origin/${GITHUB_REF#refs/heads/}
+          git push origin main
