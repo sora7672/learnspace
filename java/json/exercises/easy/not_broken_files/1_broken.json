@@ -1,0 +1,10 @@
+{
+  "property_id": "EST-55431",
+  "type": "apartment",
+  "location": {
+    "city": "New York",
+    "district": "Brooklyn",
+    "zipcode": "11215"
+  },
+  "price_usd": 685000
+}

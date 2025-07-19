@@ -1,0 +1,25 @@
+{
+  "name": "Quercus robur",
+  "common_name": "English Oak",
+  "family": "Fagaceae",
+  "origin": {
+    "continent": "Europe",
+    "native_regions": { "United Kingdom", "France", "Germany" }
+  },
+  "lifespan_years": 500,
+  "leaf": {
+    "type": "deciduous",
+    "shape": "lobed",
+    "color_seasonal":
+      "spring": "light green",
+      "summer": "dark green",
+      "autumn": "brown"
+
+  },
+                                          "growth": {
+                                            "max_height_m": 40,
+                                            "growth_rate": "slow"
+                                          },
+  "uses": ["timber", "shade", "biodiversity support"],
+  "protected": false
+}

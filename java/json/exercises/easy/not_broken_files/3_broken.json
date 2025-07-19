@@ -1,0 +1,29 @@
+{
+  "cart_id": "CART-00291",
+  "user_id": "USER-98765",
+  "items": [
+    {
+      "product_id": "SKU-123",
+      "name": "Wireless Mouse",
+      "quantity": 2,
+      "unit_price": 19.99,
+      "in_stock": true
+    },
+    {
+      "product_id": "SKU-445",
+      "name": "USB-C Hub",
+      "quantity": 1,
+      "unit_price": 34.95,
+      "in_stock": true
+    }
+  ],
+  "subtotal": 74.93,
+  "tax": 5.99,
+  "shipping_cost": 4.50,
+  "discount_applied": true,
+  "discount_code": "SUMMER15",
+  "final_price": 64.44,
+  "currency": "USD",
+  "checkout_ready": false,
+  "created_at": "2025-07-10T13:45:00Z"
+}

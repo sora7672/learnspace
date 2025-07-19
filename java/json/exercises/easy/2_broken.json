@@ -1,0 +1,12 @@
+{
+  "id": "animal-2043",
+  "species": "Panthera leo",
+  "common_name": "Lion",
+  "name:" "Simba",
+  "age": "5",
+  "gender": "male",
+  "weight_kg": 190,
+  "habitat": "savannah enclosure",
+  "diet": ["meat", "bones"],
+  "endangered": TRUE
+}
