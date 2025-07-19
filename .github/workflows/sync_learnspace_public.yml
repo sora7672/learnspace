@@ -37,7 +37,7 @@ jobs:
           git push upstream HEAD:$BRANCH_NAME --force
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
 
-      - name: Create PR in learnspace
+      - name: Create PR in learnspace (Test)
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.LEARNSPACE_PAT }}
