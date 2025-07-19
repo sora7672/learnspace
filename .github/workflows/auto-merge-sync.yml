@@ -42,3 +42,9 @@ jobs:
           git merge --no-edit origin/${{ github.event.inputs.branch }}
           git push origin HEAD:main
 
+      - name: Delete remote pr-sync branch
+        run: |
+          git push origin --delete ${{ github.event.inputs.branch }}
+
+
+          
