@@ -36,15 +36,3 @@ jobs:
           git checkout -b $BRANCH_NAME
           git push upstream HEAD:$BRANCH_NAME --force
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
-
-      - name: Create PR in learnspace (Test)
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.LEARNSPACE_PAT }}
-          commit-message: "Sync from learnspace-dev"
-          title: "PR: Sync from learnspace-dev"
-          body: |
-            This PR syncs the latest changes from `learnspace-dev/main`.
-          base: main
-          branch: ${{ env.branch_name }}
-          repository: sora7672/learnspace
