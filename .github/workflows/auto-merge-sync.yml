@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - pr-sync-*
+  create:
+    branches:
+      - pr-sync-*
 
 jobs:
   auto_merge_learnspace:
