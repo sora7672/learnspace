@@ -1,0 +1,44 @@
+name: Sync to public learnspace and open PR there
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync_learnspace_public:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this dev
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set Git identity
+        run: |
+          git config user.name "sora7672"
+          git config user.email "s0ra.bloodydiary@googlemail.com"
+
+      - name: Push sync branch to learnspace
+        run: |
+          git remote add upstream https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
+          git fetch upstream
+
+          export BRANCH_NAME=pr-sync-$(date +%s)
+          git checkout -b $BRANCH_NAME
+          git push upstream HEAD:$BRANCH_NAME --force
+
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Create PR in learnspace
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.LEARNSPACE_PAT }}
+          commit-message: "Sync from learnspace-dev"
+          title: "PR: Sync from learnspace-dev"
+          body: |
+            This PR syncs the latest changes from `learnspace-dev/main`.
+          base: main
+          branch: ${{ env.branch_name }}
+          repository: sora7672/learnspace
