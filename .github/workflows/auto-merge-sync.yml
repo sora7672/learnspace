@@ -23,8 +23,8 @@ jobs:
 
       - name: Merge pr-sync into main
         run: |
+          git remote set-url origin https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
           git fetch origin main
           git checkout main
           git merge --no-edit origin/${GITHUB_REF#refs/heads/}
-          git push https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git HEAD:main
-
+          git push origin HEAD:main
