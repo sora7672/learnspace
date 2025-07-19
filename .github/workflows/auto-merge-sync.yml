@@ -21,6 +21,10 @@ jobs:
           git config user.name "sora7672"
           git config user.email "s0ra.bloodydiary@googlemail.com"
 
+      - name: Show current branch name
+        run: |
+          echo "Current branch: ${GITHUB_REF#refs/heads/}"
+
       - name: Merge pr-sync into main
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
