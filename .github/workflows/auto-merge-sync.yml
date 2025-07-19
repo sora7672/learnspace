@@ -4,14 +4,13 @@ on:
   push:
     branches:
       - pr-sync-*
-  workflow_dispatch:
 
 jobs:
   auto_merge_learnspace:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current branch (the pushed pr-sync-*)
+      - name: Checkout current branch (pr-sync-*)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
