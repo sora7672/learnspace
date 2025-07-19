@@ -17,7 +17,8 @@ repo:sora7672/learnspace XYZ
 
 If it's not found, I haven't taught it. Or to be more precise, I haven't prepared material for it yet.  
 Feel free to DM me on Discord if you want to learn stuff.  
-I'm always happy to help, **if I have the capacity** at that time!
+I'm always happy to help, **if I have the capacity** at that time!  
+> sora_7672
 
 
 ## How is this structured?
