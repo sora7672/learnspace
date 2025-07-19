@@ -35,8 +35,9 @@ jobs:
             git checkout main
           fi
           
-      - name: Real merge
+      - name: Real merge and push
         run: |
-          git merge --no-edit origin/${{ github.event.inputs.branch }}
           git remote set-url origin https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
+          git merge --no-edit origin/${{ github.event.inputs.branch }}
           git push origin HEAD:main
+
