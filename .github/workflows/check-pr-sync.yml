@@ -1,0 +1,32 @@
+name: Check and trigger auto-merge
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # alle 5 Minuten
+  workflow_dispatch:
+
+jobs:
+  check_and_trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all remote branches
+        run: git fetch --all
+
+      - name: Find pr-sync-* branch and dispatch merge
+        run: |
+          BRANCH=$(git branch -r | grep 'origin/pr-sync-' | head -n 1 | sed 's|origin/||')
+          echo "Found branch: $BRANCH"
+          if [ -n "$BRANCH" ]; then
+            echo "Triggering auto-merge for $BRANCH"
+            gh workflow run auto-merge-syn.yaml -f branch="$BRANCH"
+          else
+            echo "No pr-sync-* branch found. Nothing to do."
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.LEARNSPACE_PAT }}
