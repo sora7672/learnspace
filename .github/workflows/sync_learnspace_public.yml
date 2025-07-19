@@ -1,0 +1,40 @@
+name: Sync to public learnspace and open PR there
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+   sync_learnspace_public:
+    if: github.repository == 'sora7672/learnspace-dev'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this dev
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set Git identity
+        run: |
+          git config user.name "sora7672"
+          git config user.email "s0ra.bloodydiary@googlemail.com"
+
+      - name: Prepare remote with PAT
+        run: |
+          # Remove GitHub Actions default token auth (prevents 403)
+          git config --unset-all http.https://github.com/.extraheader || true
+
+          # Add upstream with PAT
+          git remote add upstream https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
+          git fetch upstream
+
+      - name: Push sync branch to learnspace
+        run: |
+          export BRANCH_NAME=pr-sync-$(date +%y%m%d-%H-%M-%S)
+
+          git checkout -b $BRANCH_NAME
+          git push upstream HEAD:$BRANCH_NAME --force
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
