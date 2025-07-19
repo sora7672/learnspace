@@ -32,7 +32,8 @@ jobs:
 
       - name: Push sync branch to learnspace
         run: |
-          export BRANCH_NAME=pr-sync-$(date +%s)
+          export BRANCH_NAME=pr-sync-$(date +%y%m%d-%H-%M-%S)
+
           git checkout -b $BRANCH_NAME
           git push upstream HEAD:$BRANCH_NAME --force
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
