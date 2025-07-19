@@ -1,37 +1,32 @@
-name: Auto-merge pr-sync branches into main
+name: Check for pr-sync branches
 
 on:
-  push:
-    branches:
-      - pr-sync-*
-  create:
-    branches:
-      - pr-sync-*
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
-  auto_merge_learnspace:
+  detect_sync_branch:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current branch (pr-sync-*)
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.ref }}
 
-      - name: Set up Git
-        run: |
-          git config user.name "sora7672"
-          git config user.email "s0ra.bloodydiary@googlemail.com"
+      - name: Fetch all branches
+        run: git fetch --all
 
-      - name: Show current branch name
+      - name: Find pr-sync branch and trigger merge
         run: |
-          echo "Current branch: ${GITHUB_REF#refs/heads/}"
-
-      - name: Merge pr-sync into main
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.LEARNSPACE_PAT }}@github.com/sora7672/learnspace.git
-          git fetch origin main
-          git checkout main
-          git merge --no-edit origin/${GITHUB_REF#refs/heads/}
-          git push origin HEAD:main
+          BRANCH=$(git branch -r | grep 'origin/pr-sync-' | head -n 1 | sed 's|origin/||')
+          echo "Found: $BRANCH"
+          if [ -n "$BRANCH" ]; then
+            echo "Dispatching merge workflow for $BRANCH"
+            gh workflow run auto-merge-syn.yaml -f branch="$BRANCH"
+          else
+            echo "No pr-sync-* branch found."
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.LEARNSPACE_PAT }}
