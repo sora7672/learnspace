@@ -20,8 +20,8 @@ jobs:
 
       - name: Find pr-sync-* branch and dispatch merge
         run: |
-          BRANCH=$(git branch -r | grep 'origin/pr-sync-' | head -n 1 | sed 's|origin/||')
-          echo "Found branch: $BRANCH"
+          BRANCH=$(git branch -r | grep 'origin/pr-sync-' | head -n 1 | sed 's|origin/||' | xargs)
+          echo "Found branch: '$BRANCH'"
           if [ -n "$BRANCH" ]; then
             echo "Triggering auto-merge for $BRANCH"
             gh workflow run auto-merge-sync.yml -f branch="$BRANCH"
