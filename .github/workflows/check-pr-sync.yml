@@ -24,7 +24,7 @@ jobs:
           echo "Found branch: $BRANCH"
           if [ -n "$BRANCH" ]; then
             echo "Triggering auto-merge for $BRANCH"
-            gh workflow run auto-merge-syn.yaml -f branch="$BRANCH"
+            gh workflow run auto-merge-sync.yaml -f branch="$BRANCH"
           else
             echo "No pr-sync-* branch found. Nothing to do."
           fi
