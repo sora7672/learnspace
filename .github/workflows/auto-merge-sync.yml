@@ -1,9 +1,10 @@
 name: Auto-merge pr-sync branches into main
 
 on:
-  create:
+  push:
     branches:
       - pr-sync-*
+  workflow_dispatch:
 
 jobs:
   auto_merge_learnspace:
