@@ -1,5 +1,6 @@
 # Learnspace
-
+This is a space where you and I can learn some things about programming.  
+Or just re-read some basics.  
 
 ## What is this?
 Basically this is a collection of materials for teaching I prepared for others.  
