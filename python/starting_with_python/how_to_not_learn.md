@@ -100,7 +100,8 @@ Always question everything and ask yourself "why?" That’s how you actually lea
 > I've seen programmers swapping from JS or Java to Python  
 > and making the most basic mistakes over and over. Because? They didn't learn programming before!  
 > They memorized their language patterns! Biggest mistake you can do.
-> ---
+
+
 > When I created _my first big Python project_, I struggled 14 fucking days on a problem with 3 Frameworks  
 > intercepting each other, resulting in a dumb combination of threads which needed to be closed  
 > in a specific order. It took 5 lines of code (LOC) to fix only... but over 30 hours to test and figure out.    
