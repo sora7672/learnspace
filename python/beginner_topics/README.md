@@ -23,7 +23,7 @@ To write solid Software, not alone, you should check all of them with the same p
 - [Mixed Infos](../mixed_infos/README.md)
 
 
-- [Module Knowledge](../beginner_topics/README.md)
+- [Module Knowledge](../module_knowledge/README.md)
   - Also check this from now on, based on your project.
 
 
