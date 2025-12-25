@@ -406,12 +406,13 @@ half_top: ▀
 ```
 
 
-### Notes
+### Notes  
+
 > You should at least have heard from it at this point, don't think too much about it.  
-> Every variable type is basically a Class, so every variable you define is an Object of a class.  
-> That means string, int, float, bool, tuple, set, list, dict are all the `Class Names` of the Object    
+> Every variable type is basically a Class, so every variable you define is an Object of a class.
+> That means string, int, float, bool, tuple, set, list, dict are all the `Class Names` of the Object 
 > you save in RAM.  
-> ---  
+
 > I tell you this, because you can create later your own classes and from them "get" objects,  
 > which then are saved as a variable also.  
 > **In Short: These are the only types you need to know for now.  
