@@ -47,7 +47,7 @@ Write it down. Try to explain it to someone else, or to yourself.
 If you can’t, you don’t really understand it yet.
 </br></br>
 
-#### 8. Giving Up When Stuck  
+#### 8. Giving Up When Stuck
 Everyone hits problems that seem unsolvable. It’s normal to feel stuck or even frustrated for days.  
 Don’t bang your head against the wall forever. Take a real break!  
 Sleep on it, do something else, then come back fresh.  
@@ -58,29 +58,29 @@ _I like to use **"Explain it to your Grandma who don't know PC stuff"**, helps a
 
 ## Real-World Learning Advice
 
-#### 1. Frustration and Headaches Are Normal   
+#### 1. Frustration and Headaches Are Normal
 If you feel mentally exhausted or even get headaches, that’s your brain wiring new connections (like muscle soreness after a workout).  
 Take a short break, not a week off, drink enough water (Your body needs it then!) and keep going.  
 You’re literally leveling up your brain!
 </br></br>
 
-#### 2. Talk to Others, Even Non-Coders  
+#### 2. Talk to Others, Even Non-Coders
 If you’re stuck, explain your problem out loud to a friend or even to someone who doesn’t code.  
 Breaking down the issue for someone else often reveals the real problem and sometimes the solution.
 
-#### 3. Don’t Waste Hours Stuck, Change Perspective* 
+#### 3. Don’t Waste Hours Stuck, Change Perspective*
 If you’re stuck for more than a couple of hours, do something totally different.  
 Sometimes the solution comes while you’re walking, observing the world, or even watching how things work in real life.
 
-#### 4. Mistakes Are Part of the Journey  
+#### 4. Mistakes Are Part of the Journey
 Nobody gets it right all the time. Every error is a step towards deeper understanding.  
 Celebrate your bugs. They’re proof that you’re learning.
 
-#### 5. You Don’t Need to Memorize Everything  
+#### 5. You Don’t Need to Memorize Everything
 It’s totally normal to Google things or check your notes, even after months.  
 The important part is understanding how to use what you find.
 
-#### 6. Mini-Projects Beat Copy-Paste, Every Time  
+#### 6. Mini-Projects Beat Copy-Paste, Every Time
 Don’t just retype what you see. Think of your own (even silly) problems to solve with code.  
 That’s where the real learning happens.
 
@@ -100,7 +100,8 @@ Always question everything and ask yourself "why?" That’s how you actually lea
 > I've seen programmers swapping from JS or Java to Python  
 > and making the most basic mistakes over and over. Because? They didn't learn programming before!  
 > They memorized their language patterns! Biggest mistake you can do.
-> ---
+
+
 > When I created _my first big Python project_, I struggled 14 fucking days on a problem with 3 Frameworks  
 > intercepting each other, resulting in a dumb combination of threads which needed to be closed  
 > in a specific order. It took 5 lines of code (LOC) to fix only... but over 30 hours to test and figure out.    

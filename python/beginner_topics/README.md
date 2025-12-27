@@ -18,13 +18,13 @@ Here you have multiple things that are all relevant,
 it matters what you main goal in learning to code is.  
 To write solid Software, not alone, you should check all of them with the same priority.
 
-- [Advanced Topics](../advanced_topics/README.md)  
-- [Documentation and Debugging](../documentation_and_debugging/README.md)  
+- [Advanced Topics](../advanced_topics/README.md)
+- [Documentation and Debugging](../documentation_and_debugging/README.md)
 - [Mixed Infos](../mixed_infos/README.md)
 
 
-- [Module Knowledge](../beginner_topics/README.md)
-  - Also check this from now on, based on your project.
+- [Module Knowledge](../module_knowledge/README.md)
+    - Also check this from now on, based on your project.
 
 
 **[[Back to top Topic]](../README.md)**
